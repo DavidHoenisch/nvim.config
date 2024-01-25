@@ -69,9 +69,9 @@ vim.api.nvim_set_keymap("n", "<leader>tt", ":FloatermToggle<CR>i", {silent = tru
 
 
 -- Use <Tab> and <S-Tab> to navigate through popup menu
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? "\\<C-y>" : "\\<CR>"', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', {expr = true})
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<Tab>"', {expr = true})
+vim.api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? "<C-y>" : "<CR>"', {expr = true, noremap = true})
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt="menuone,noinsert,noselect"
@@ -94,3 +94,12 @@ vim.api.nvim_set_keymap("n", "<Leader>jq", ":%!jq .<CR><CR>", {silent = true, no
 vim.api.nvim_set_keymap("n", "<Leader>nt", ":EasyTablesCreateNew", {silent = true, noremap =true})
 vim.api.nvim_set_keymap("n", "<Leader>et", ":ExportTable<CR>", {silent = true, noremap =true})
 vim.api.nvim_set_keymap("n", "<Leader>it", ":EasyTablesImportThisTable<CR>", {silent = true, noremap =true})
+
+
+-- buffer nav
+vim.api.nvim_set_keymap("n", "<C-b>n", ":bNext<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<C-b>p", ":bprevious<CR>", {silent = true, noremap = true})
+
+
+-- ray-x shortcuts
+vim.api.nvim_set_keymap("n", "<Leader>ch", ":GoCheat<CR>", {silent = true, noremap = true})

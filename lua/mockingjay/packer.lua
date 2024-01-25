@@ -12,35 +12,29 @@ return require('packer').startup(function(use)
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
-use({ 
-	"catppuccin/nvim", as = "catppuccin", 
 
-config = function()
-  		vim.cmd.colorscheme "catppuccin"
-	end
-})
-use('vimwiki/vimwiki')
+-- Color Scheme Configs
+
+use {"catppuccin/nvim", as = "catppuccin"}
+use {"ellisonleao/gruvbox.nvim"}
+use {"folke/tokyonight.nvim"}
+use {"zaldih/themery.nvim"}
+use {"rose-pine/neovim", as = "rose-pine"}
+
+
+-- Convenience plugins
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
 use('theprimeagen/harpoon')
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
-use {
-  'VonHeikemen/lsp-zero.nvim',
-  branch = 'v3.x',
-  requires = {
-    --- Uncomment these if you want to manage the language servers from neovim
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
+use 'williamboman/mason.nvim'
+use 'williamboman/mason-lspconfig.nvim'
 
-    -- LSP Support
-    {'neovim/nvim-lspconfig'},
-    -- Autocompletion
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'L3MON4D3/LuaSnip'},
-  }
-}
+use 'neovim/nvim-lspconfig'
+use 'hrsh7th/nvim-cmp'
+use 'hrsh7th/cmp-nvim-lsp'
+use 'L3MON4D3/LuaSnip'
 
 use {
     "nvim-neorg/neorg",
@@ -118,9 +112,15 @@ use({
 
 use {'nvim-tree/nvim-web-devicons'}
 
-use 'ray-x/go.nvim'
-use 'ray-x/guihua.lua' -- recommended if need floating window support
-use 'neovim/nvim-lspconfig'
 use "Myzel394/easytables.nvim"
 use "folke/todo-comments.nvim"
+
+
+-- Golang Plugins
+use 'ray-x/go.nvim'
+use 'ray-x/guihua.lua' -- recommended if need floating window support
+
+
+-- code completion plugins
+
 end)
